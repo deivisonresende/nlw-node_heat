@@ -6,7 +6,7 @@ import http from "http";
 import cors from "cors";
 
 const app = express();
-app.use(cors)
+app.use(cors({origin: "*"}))
 
 const serverHttp = http.createServer(app)
 
