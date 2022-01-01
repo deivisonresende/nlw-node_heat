@@ -10,8 +10,8 @@ export function ensureAuthenticated(request: Request, response: Response,next: N
   if(!authToken){
     return response.status(401).json({ errorCode: "token.invalid"})
   }
-  const [, token] = authToken.split(" ")
-  
+  const token = ( authToken.includes("Bearer") ? authToken.split(" ")[1] : authToken )
+  console.log(token)
   try {
     const { sub } = verify(token, process.env.JWT_SECRET) as IPayload
 
