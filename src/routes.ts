@@ -15,4 +15,4 @@ router.get("/messages/last3", new GetLast3MessagesController().handle);
 
 router.get("/profile", new GetProfileUserController().handle);
 
-export { router }
+export { router } 
